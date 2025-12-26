@@ -1,4 +1,7 @@
+
+import { firebaseApp } from '@/firebase/firebaseConfig';
 import { StyleSheet } from 'react-native';
+import { Button } from 'react-native-paper';
 
 import EditScreenInfo from '@/components/EditScreenInfo';
 import { Text, View } from '@/components/Themed';
@@ -9,6 +12,9 @@ export default function TabOneScreen() {
       <Text style={styles.title}>Tab One</Text>
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
       <EditScreenInfo path="app/(tabs)/index.tsx" />
+      <Button mode="contained" onPress={() => console.log('Firebase App:', firebaseApp.name)}>
+        Test Paper Button
+      </Button>
     </View>
   );
 }
